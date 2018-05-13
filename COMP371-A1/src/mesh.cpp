@@ -51,7 +51,7 @@ GLuint Mesh::bind(void)
 }
 GLuint Mesh::clearContext(void)
 {
-	glBindVertexArray( 0 );
+	glBindVertexArray(0);
 	return vao;
 }
 void Mesh::init(void)

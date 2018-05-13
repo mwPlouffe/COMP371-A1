@@ -14,7 +14,7 @@ HeightMap::HeightMap(CImg<unsigned char> *image)
 	height = image->height();
 	init();
 	generateVertices(*image);
-	//index();
+	index();
 	bind();
 }
 void HeightMap::generateVertices(CImg<unsigned char> image)

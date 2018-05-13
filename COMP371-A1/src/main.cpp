@@ -74,29 +74,34 @@ int main(int argc, const char* argv[])
 	std::cout << "MESSAGE: Loading image into the height map"<<std::endl;
 	
 	GLfloat vertices[] = {
-		0.0f, 0.5f, 0.0f,  // Top
-		0.5f, -0.5f, 0.0f,  // Bottom Right
-		-0.5f, -0.5f, 0.0f,  // Bottom Left
+		1.0f, 1.0f, 0.0f,  // Top
+		-1.0f, 1.0f, 0.0f,  // Bottom Right
+		-1.0f, -1.0f, 0.0f,
+		1.0f, -1.0f, 0.0f,  // Bottom Left
 	};
+	GLfloat vertices1[] = {
+		1.0f, 2.0f, 0.0f,  // Top
+		-1.0f, 2.0f, 0.0f,  // Bottom Right
+		-1.0f, 0.0f, 0.0f,
+		1.0f, 0.0f, 0.0f,  // Bottom Left
+	};
+	
 	win->enableShaders(sp->program());
-	GLuint vao = win->bind(vertices, GL_STATIC_DRAW, 3, 9);
+	GLuint vao = win->bind(vertices, GL_STATIC_DRAW, 4, 12);
+	GLuint vao1 = win->bind(vertices1, GL_STATIC_DRAW, 4, 12);
+	HeightMap hmap(&img);
 	win->enableManager(sp->program());
+		
 	
-	int width, height;
-	glfwGetFramebufferSize(win->glWindow(), &width, &height);
-	glm::vec3 triangle_scale;
-	triangle_scale = glm::vec3(1.0f); //shorthand, initializes all 4 components to 1.0f
 	
-	// Game loop
 	while (!win->closed())
 	{
-		glClearColor( 0.2f, 0.3f, 0.3f, 1.0f );
+		glClearColor( 0.15f, 0.15f, 0.15f, 1.0f );
 		win->clear();
-		win->manager->broadcast();
-		win->drawArrays(vao, GL_TRIANGLES, 3);
+		win->drawArrays(vao,GL_TRIANGLE_STRIP, 8);
+		win->drawArrays(vao1,GL_TRIANGLE_STRIP, 8);
+		win->manager->fetch();
 		win->update();
-
-		
 	}
 	std::cout << "MESSAGE: Update loop terminated, program closing." << std::endl;
 	free(win);
