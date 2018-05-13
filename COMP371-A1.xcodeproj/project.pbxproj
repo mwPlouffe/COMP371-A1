@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E14727320A7AE6100C8644E /* heightMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E14727220A7AE6100C8644E /* heightMap.cpp */; };
 		6E87A99C20A638DD00BF9993 /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E87A99B20A638DD00BF9993 /* mesh.cpp */; };
 		6ED3F15A20A42C3A00428507 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED3F15920A42C3A00428507 /* OpenGL.framework */; };
 		6ED3F15C20A42C5A00428507 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED3F15B20A42C5A00428507 /* libglfw.3.2.dylib */; };
@@ -36,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6E14727120A7AD5600C8644E /* heightMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = heightMap.h; sourceTree = "<group>"; };
+		6E14727220A7AE6100C8644E /* heightMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = heightMap.cpp; sourceTree = "<group>"; };
 		6E71C8E120A4EF8800F8E7C4 /* camera_shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = camera_shader.vert; sourceTree = "<group>"; };
 		6E87A99A20A635F700BF9993 /* mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mesh.h; sourceTree = "<group>"; };
 		6E87A99B20A638DD00BF9993 /* mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mesh.cpp; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		6ED3F15120A42C2B00428507 /* COMP371-A1 */ = {
 			isa = PBXGroup;
 			children = (
+				6ED3F1A320A43D0400428507 /* shaders */,
 				6ED3F16720A42CAD00428507 /* img */,
 				6ED3F17520A42CAD00428507 /* include */,
 				6ED3F18220A42CAD00428507 /* src */,
@@ -153,10 +157,10 @@
 				6ED3F17820A42CAD00428507 /* CImg.h */,
 				6ED3F1A220A43CF800428507 /* Exceptions */,
 				6ED3F17D20A42CAD00428507 /* main.h */,
-				6ED3F1A320A43D0400428507 /* shaders */,
 				6ED3F18020A42CAD00428507 /* shaderProgram.h */,
 				6ED3F18120A42CAD00428507 /* window.h */,
 				6E87A99A20A635F700BF9993 /* mesh.h */,
+				6E14727120A7AD5600C8644E /* heightMap.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -168,6 +172,7 @@
 				6ED3F18720A42CAD00428507 /* main.cpp */,
 				6ED3F18820A42CAD00428507 /* shaderProgram.cpp */,
 				6E87A99B20A638DD00BF9993 /* mesh.cpp */,
+				6E14727220A7AE6100C8644E /* heightMap.cpp */,
 				6ED3F18920A42CAD00428507 /* window.cpp */,
 			);
 			path = src;
@@ -203,6 +208,7 @@
 				6E71C8E120A4EF8800F8E7C4 /* camera_shader.vert */,
 			);
 			name = shaders;
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +273,7 @@
 				6ED3F19720A42CAD00428507 /* window.cpp in Sources */,
 				6ED3F19320A42CAD00428507 /* GLFWException.cpp in Sources */,
 				6ED3F19520A42CAD00428507 /* main.cpp in Sources */,
+				6E14727320A7AE6100C8644E /* heightMap.cpp in Sources */,
 				6E87A99C20A638DD00BF9993 /* mesh.cpp in Sources */,
 				6ED3F19120A42CAD00428507 /* GLCompilationException.cpp in Sources */,
 			);

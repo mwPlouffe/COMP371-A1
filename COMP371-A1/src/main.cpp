@@ -19,7 +19,6 @@ int main(int argc, const char* argv[])
 	}
 	//attempt to load the image
 	CImg <unsigned char> img;
-	int pixels = 4;
 	try
 	{
 		img = CImg<unsigned char>(fpath);
@@ -72,38 +71,32 @@ int main(int argc, const char* argv[])
 	}
 	
 	win->registerCallbacks();
-	//	glm::vec3* vertices1 = (glm::vec3*) malloc (sizeof(glm::vec3) * pixels * pixels);
+	std::cout << "MESSAGE: Loading image into the height map"<<std::endl;
 	
-	glm::vec3 vertices[] =
-	{
-		glm::vec3(0.5f,  0.5f, 0.0f),
-		glm::vec3(0.5f, -0.5f, 0.0f),
-		glm::vec3(-0.5f, -0.5f, 0.0f),
-		glm::vec3(-0.5f,  0.5f, 0.0f),
+	GLfloat vertices[] = {
+		0.0f, 0.5f, 0.0f,  // Top
+		0.5f, -0.5f, 0.0f,  // Bottom Right
+		-0.5f, -0.5f, 0.0f,  // Bottom Left
 	};
-	int index = 0;
-	std::cout << "MESSAGE: Loading image";
-//	for (int i = pixels -1; i >= 0; i--)
-//	{
-//		for (int j = pixels - 1; j >= 0; j--)
-//		{
-//			std::cout << "Pixel " << index << ": (" << i << ", " << j << ", " << (int) img(i,j,0,0) << ")" << std::endl;
-//			index =(pixels * pixels) - (j + i * pixels) - 1;
-//			vertices1[index] = *new glm::vec3(i, j, (int)img(i,j,0,0) );
-//		}
-//	}
-	std::cout<<std::endl << "MESSAGE: Done Loading image" << std::endl;
-	Mesh* mesh = new Mesh(vertices, 4);
-
-	std::cout << "MESSAGE: Binding vertices to vao" << std::endl;
 	win->enableShaders(sp->program());
-	std::cout << "MESSAGE: entering update loop" << std::endl;
-	while ( ! win->closed() )
+	GLuint vao = win->bind(vertices, GL_STATIC_DRAW, 3, 9);
+	win->enableManager(sp->program());
+	
+	int width, height;
+	glfwGetFramebufferSize(win->glWindow(), &width, &height);
+	glm::vec3 triangle_scale;
+	triangle_scale = glm::vec3(1.0f); //shorthand, initializes all 4 components to 1.0f
+	
+	// Game loop
+	while (!win->closed())
 	{
-		win->clear();
-		win->drawElements(mesh->vao, GL_TRIANGLES, 3);
 		glClearColor( 0.2f, 0.3f, 0.3f, 1.0f );
+		win->clear();
+		win->manager->broadcast();
+		win->drawArrays(vao, GL_TRIANGLES, 3);
 		win->update();
+
+		
 	}
 	std::cout << "MESSAGE: Update loop terminated, program closing." << std::endl;
 	free(win);

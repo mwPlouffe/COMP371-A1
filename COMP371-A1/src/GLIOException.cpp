@@ -1,10 +1,12 @@
 #include "GLIOException.h"
 
-GLIOException::GLIOException() : GLException()
+GLIOException::GLIOException()
+: GLException()
 {
 	mError = "There was a problem that occurred when reading the shaders from file";
 }
-GLIOException::GLIOException(const char* message) : GLException(message)
+GLIOException::GLIOException(const char* message)
+: GLException(message)
 {
-	mError = message;
+	//intentionally empty
 }

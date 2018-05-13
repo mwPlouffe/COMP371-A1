@@ -57,6 +57,7 @@ void Window::init()
 		throw GLException("Could not initialise GLEW");
 	}
 	setViewPort();
+	//depthBuffer();
 }
 void Window::setViewPort()
 {
@@ -64,10 +65,20 @@ void Window::setViewPort()
 	glfwGetFramebufferSize(mWindow,&w,&h);
 	glViewport(0,0,w,h);
 }
+void Window::windowData()
+{
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+	std::cout << glfwGetVersionString() << std::endl;
+}
 void Window::depthBuffer()
 {
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
+	glEnable(GL_CULL_FACE);
 }
 void Window::error_callback(int error, const char* description)
 {
@@ -77,40 +88,10 @@ void Window::error_callback(int error, const char* description)
 }
 void Window::key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
-	bool rebind = false;
-	glm::mat4 Tr;
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 	{	
 		 glfwSetWindowShouldClose(window, GL_TRUE);
 	}
-	if (key == GLFW_KEY_UP && action == GLFW_PRESS)
-	{
-		
-		Tr = glm::rotate(Tr, 45.0f, glm::vec3(0.0f, 0.0f, 1.0f));
-		rebind = true;
-	}
-	if (key == GLFW_KEY_RIGHT && action == GLFW_PRESS)
-	{
-		Tr = glm::rotate(Tr, 45.0f, glm::vec3(0.0f, 1.0f, 0.0f));
-		rebind = true;
-	}
-	if (key == GLFW_KEY_DOWN && action == GLFW_PRESS)
-	{
-		Tr = glm::rotate(Tr, 45.0f, glm::vec3(0.0f, 0.0f, -1.0f));
-		rebind = true;
-	}
-	if (key == GLFW_KEY_LEFT && action == GLFW_PRESS)
-	{
-		Tr = glm::rotate(Tr, 45.0f, glm::vec3(0.0f, -1.0f, 0.0f));
-		rebind = true;
-	}
-	if (rebind)
-	{
-		
-	}
-
-	
-
 }
 void Window::setErrorCallback()
 {
@@ -124,6 +105,9 @@ void Window::registerCallbacks()
 void Window::enableShaders(GLuint shaderProgramID)
 {
 	glUseProgram(shaderProgramID);
+}
+void Window::enableManager(GLuint shaderProgramID)
+{
 	if (activeManager == false)
 	{
 		activeManager = true;
@@ -131,67 +115,42 @@ void Window::enableShaders(GLuint shaderProgramID)
 		manager->init(this);
 	}
 }
-GLuint Window::bind(glm::vec3* vertices, int vertexNum, GLenum MODE, int modeSize)
+GLuint Window::bind(GLfloat *vertices, GLenum DRAW_MODE, int vertexNum, int elements)
 {
-	//generate a vao container into which to load the object, and make it current
-	GLuint vao;
+	GLuint vao,vbo;
 	glGenVertexArrays(1,&vao);
-	glBindVertexArray(vao);
-	
-	GLuint vbo;
 	glGenBuffers(1,&vbo);
+	
+	glBindVertexArray(vao);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, vertexNum * sizeof (vertices), vertices, MODE);
 	
-	GLuint ebo;
-	glGenBuffers(1,&ebo);
+	glBufferData(GL_ARRAY_BUFFER, elements * sizeof(vertices), vertices, DRAW_MODE);
 	
-	//generate the indices
-	glm::vec3* indices;
-	
-	glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, ebo );
-	glBufferData( GL_ELEMENT_ARRAY_BUFFER, sizeof( indices ), indices, GL_STATIC_DRAW );
-	
-
+	glVertexAttribPointer(0, vertexNum, GL_FLOAT, GL_FALSE, vertexNum * sizeof(GLfloat), (GLvoid*)0);
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, modeSize, GL_FLOAT, GL_FALSE, modeSize*sizeof(GLfloat), (GLvoid*) 0);
-	clearContext();	
+	
+	clearContext();
 	return vao;
-}
-GLuint Window::rebind(GLuint vao, int vertexNum, GLenum MODE, int modeSize)
-{
-	return GL_FALSE;
-
 }
 void Window::drawArrays(GLuint vao, GLenum USAGE, int modeSize)
 {
-	manager->broadcast();
-	glBindVertexArray(vao);
-	glDrawArrays(USAGE, 0, modeSize);
-	clearContext();
+		
+		glBindVertexArray(vao);
+		glDrawArrays(USAGE, 0, modeSize);
+		clearContext();
 }
-//this draw needs to be updated for the mesh!
-void Window::drawElements(GLuint vao, GLenum USAGE, int modeSize)
+
+void Window::drawElements(Mesh *m, GLenum USAGE)
 {
-	manager->broadcast();
-	glBindVertexArray(vao);
-	clearContext();
+	
 }
 void Window::clearContext()
 {
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindVertexArray(0);
-	glDisableVertexAttribArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0); // Note that this is allowed, the call to glVertexAttribPointer registered VBO as the currently bound vertex buffer object so afterwards we can safely unbind
+	
+	glBindVertexArray(0); // Unbind VAO (it's always a good thing to unbind any buffer/array to prevent strange bugs), remember: do NOT unbind the EBO, keep it bound to this VAO
 }
-void Window::windowData()
-{
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-	std::cout << glfwGetVersionString() << std::endl;
-}
+
 void Window::close()
 {
 	glfwSetWindowShouldClose(mWindow, GL_TRUE);
@@ -202,10 +161,8 @@ bool Window::closed() const
 }
 void Window::update()
 {
-	
 	glfwSwapBuffers(mWindow);
 	glfwPollEvents();
-	
 }
 void Window::clear() const
 {
@@ -232,7 +189,7 @@ void Window::FrameManager::init(Window *w)
 	//sets default matrices for the class
 	int width,height;
 	glfwGetFramebufferSize(w->glWindow(),&width,&height);
-	projM = glm::perspective(35.0f, (GLfloat)width / (GLfloat)height, 0.0f, 300.0f);
+	projM = glm::perspective(45.0f, (GLfloat)width / (GLfloat)height, 0.0f, 100.0f);
 	
 	viewM = glm::lookAt(glm::vec3(0.0f, 0.0f, 5.0f), //camera positioned here
 						glm::vec3(0.0f, 0.0f, 0.0f), //looks at origin

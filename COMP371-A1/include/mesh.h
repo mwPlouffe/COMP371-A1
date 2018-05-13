@@ -21,23 +21,20 @@
 
 class Mesh
 {
-	struct Vertex
+	protected: struct Vertex
 	{
 		glm::vec3 position;
-		glm::vec3 normal;
+		//glm::vec3 normal;
 		GLuint index;
 		Vertex(void);
 		Vertex(glm::vec3 pos);
 		Vertex(glm::vec3 pos, int i);
 		Vertex(glm::vec3 pos, glm::vec3 norm);
 		
-		//this operator compares floating point numbers, be careful with its use
+		//compares the ID of each vertex
 		bool operator==(const Vertex &v);
-		bool equals(const Vertex &v);
-		float squareDist(const Vertex &v) const;
-		float squareSum(void) const;
 	};
-	struct Edge
+	protected: struct Edge
 	{
 		Vertex *start;
 		Vertex *end;
@@ -47,12 +44,11 @@ class Mesh
 		float slope(void);
 		void flip(void);
 		
-		//this operator compares floating point numbers, be careful with its use
-		//compares the distance of all the coordinates involved, NOT a content equals operator.
+		//compares the start and end IDs to see if the two vertices of each edge are the same (position independent)
 		bool operator==(const Edge &e);
 		
 	};
-	struct Triangle
+	protected: struct Triangle
 	{
 			Edge *e_ab;
 			Edge *e_bc;
@@ -60,14 +56,12 @@ class Mesh
 			bool valid;
 			Triangle(void);
 			Triangle(Vertex* a, Vertex* b, Vertex* c);
-			bool contains(const Vertex& v);
-			bool envelopes(const Vertex &v);
 			void reorder(void);
 	};
 	
 		friend struct Vertex;
 		friend struct Triangle;
-	private:
+	protected:
 		std::vector<Vertex>		vertices;		//the points to be used in the mesh
 		std::vector<Triangle>	triangles;	//keeps track of all the triangle primitives
 		std::vector<Edge>		edges;		//holds the edges of all the triangle primitives
@@ -75,22 +69,19 @@ class Mesh
 		GLuint vbo ,ebo;
 	public:
 		GLuint vao;
+		Mesh(void);
 		Mesh(glm::vec3 *v, size_t size);
-		GLuint bind(void);				//implicitly clears context
 		GLuint clearContext(void);
-	private:
+		GLuint bind(void);					//implicitly clears context
+		inline int renderSize(void)
+		{
+			return indices.size();
+		};
+	protected:
+		virtual void index(void);
 		void init(void);
-		void index(void);
-		Triangle& superTriangle(const float midX, const float midY, const float delta);
-		float* bounds(float minX, float minY);
-		void markVertices(const Vertex& v);
-		void checkEdges(void);
-		void GenerateTriangles(const Vertex& v);
-		void indexList(void);
-		std::vector<glm::vec3> vertexList(void);
-	
-	
-
+		virtual void indexList(void);
+		std::vector<glm::vec3> vertexList(void);	//unwraps the vertices for passing as a vbo argument
 };
 
 #endif /* mesh_h */
