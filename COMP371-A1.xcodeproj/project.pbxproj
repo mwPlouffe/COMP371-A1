@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E14727320A7AE6100C8644E /* heightMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E14727220A7AE6100C8644E /* heightMap.cpp */; };
-		6E87A99C20A638DD00BF9993 /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E87A99B20A638DD00BF9993 /* mesh.cpp */; };
+		6E1EB82020AC8EA8006BBC92 /* heightMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EB81420AC8EA8006BBC92 /* heightMap.cpp */; };
+		6E1EB82120AC8EA8006BBC92 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EB81520AC8EA8006BBC92 /* object.cpp */; };
+		6E1EB82220AC8EA8006BBC92 /* GLCompilationException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EB81720AC8EA8006BBC92 /* GLCompilationException.cpp */; };
+		6E1EB82320AC8EA8006BBC92 /* GLException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EB81820AC8EA8006BBC92 /* GLException.cpp */; };
+		6E1EB82420AC8EA8006BBC92 /* GLFWException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EB81920AC8EA8006BBC92 /* GLFWException.cpp */; };
+		6E1EB82520AC8EA8006BBC92 /* GLIOException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EB81A20AC8EA8006BBC92 /* GLIOException.cpp */; };
+		6E1EB82620AC8EA8006BBC92 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EB81C20AC8EA8006BBC92 /* camera.cpp */; };
+		6E1EB82720AC8EA8006BBC92 /* renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EB81D20AC8EA8006BBC92 /* renderer.cpp */; };
+		6E1EB82820AC8EA8006BBC92 /* shaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EB81E20AC8EA8006BBC92 /* shaderProgram.cpp */; };
+		6E1EB82920AC8EA8006BBC92 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EB81F20AC8EA8006BBC92 /* window.cpp */; };
 		6ED3F15A20A42C3A00428507 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED3F15920A42C3A00428507 /* OpenGL.framework */; };
 		6ED3F15C20A42C5A00428507 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED3F15B20A42C5A00428507 /* libglfw.3.2.dylib */; };
 		6ED3F15E20A42C7500428507 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED3F15D20A42C7500428507 /* libGLEW.2.1.0.dylib */; };
-		6ED3F19120A42CAD00428507 /* GLCompilationException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3F18320A42CAD00428507 /* GLCompilationException.cpp */; };
-		6ED3F19220A42CAD00428507 /* GLException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3F18420A42CAD00428507 /* GLException.cpp */; };
-		6ED3F19320A42CAD00428507 /* GLFWException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3F18520A42CAD00428507 /* GLFWException.cpp */; };
-		6ED3F19420A42CAD00428507 /* GLIOException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3F18620A42CAD00428507 /* GLIOException.cpp */; };
-		6ED3F19520A42CAD00428507 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3F18720A42CAD00428507 /* main.cpp */; };
-		6ED3F19620A42CAD00428507 /* shaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3F18820A42CAD00428507 /* shaderProgram.cpp */; };
-		6ED3F19720A42CAD00428507 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3F18920A42CAD00428507 /* window.cpp */; };
 		6ED3F19920A42F3100428507 /* libtiff.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED3F19820A42F3100428507 /* libtiff.5.dylib */; };
 		6ED3F19B20A42F4D00428507 /* libpng16.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED3F19A20A42F4D00428507 /* libpng16.16.dylib */; };
 		6ED3F19D20A42F6500428507 /* libjpeg.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED3F19C20A42F6500428507 /* libjpeg.9.dylib */; };
+		6EDEFEA220A9E6CF0049DC4C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEFEA120A9E6CF0049DC4C /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,11 +39,32 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6E14727120A7AD5600C8644E /* heightMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = heightMap.h; sourceTree = "<group>"; };
-		6E14727220A7AE6100C8644E /* heightMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = heightMap.cpp; sourceTree = "<group>"; };
-		6E71C8E120A4EF8800F8E7C4 /* camera_shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = camera_shader.vert; sourceTree = "<group>"; };
-		6E87A99A20A635F700BF9993 /* mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mesh.h; sourceTree = "<group>"; };
-		6E87A99B20A638DD00BF9993 /* mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mesh.cpp; sourceTree = "<group>"; };
+		6E1EB80320AC8E87006BBC92 /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
+		6E1EB80520AC8E87006BBC92 /* GLCompilationException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCompilationException.h; sourceTree = "<group>"; };
+		6E1EB80620AC8E87006BBC92 /* GLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLException.h; sourceTree = "<group>"; };
+		6E1EB80720AC8E87006BBC92 /* GLFWException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLFWException.h; sourceTree = "<group>"; };
+		6E1EB80820AC8E87006BBC92 /* GLIOException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLIOException.h; sourceTree = "<group>"; };
+		6E1EB80B20AC8E87006BBC92 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		6E1EB80C20AC8E87006BBC92 /* renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = renderer.h; sourceTree = "<group>"; };
+		6E1EB80D20AC8E87006BBC92 /* shaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shaderProgram.h; sourceTree = "<group>"; };
+		6E1EB80E20AC8E87006BBC92 /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
+		6E1EB81020AC8E87006BBC92 /* camera_shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = camera_shader.vert; sourceTree = "<group>"; };
+		6E1EB81120AC8E87006BBC92 /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
+		6E1EB81420AC8EA8006BBC92 /* heightMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = heightMap.cpp; sourceTree = "<group>"; };
+		6E1EB81520AC8EA8006BBC92 /* object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = object.cpp; sourceTree = "<group>"; };
+		6E1EB81720AC8EA8006BBC92 /* GLCompilationException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLCompilationException.cpp; sourceTree = "<group>"; };
+		6E1EB81820AC8EA8006BBC92 /* GLException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLException.cpp; sourceTree = "<group>"; };
+		6E1EB81920AC8EA8006BBC92 /* GLFWException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLFWException.cpp; sourceTree = "<group>"; };
+		6E1EB81A20AC8EA8006BBC92 /* GLIOException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLIOException.cpp; sourceTree = "<group>"; };
+		6E1EB81C20AC8EA8006BBC92 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
+		6E1EB81D20AC8EA8006BBC92 /* renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = renderer.cpp; sourceTree = "<group>"; };
+		6E1EB81E20AC8EA8006BBC92 /* shaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shaderProgram.cpp; sourceTree = "<group>"; };
+		6E1EB81F20AC8EA8006BBC92 /* window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
+		6E51E00420AE4E4C00EBAD83 /* heightMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = heightMap.h; sourceTree = "<group>"; };
+		6E69ED7C20AD0F6800A78ADC /* 5275-heightmap-test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5275-heightmap-test.png"; sourceTree = "<group>"; };
+		6E69ED7D20AD0F6800A78ADC /* alpen_heightmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alpen_heightmap.png; sourceTree = "<group>"; };
+		6E69ED7E20AD0F6800A78ADC /* imageproxy.php.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageproxy.php.png; sourceTree = "<group>"; };
+		6E69ED7F20AD0F6800A78ADC /* morgantown-height-map-usgs-ned-10m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "morgantown-height-map-usgs-ned-10m.png"; sourceTree = "<group>"; };
 		6ED3F14F20A42C2B00428507 /* COMP371-A1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "COMP371-A1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED3F15920A42C3A00428507 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		6ED3F15B20A42C5A00428507 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
@@ -60,25 +83,13 @@
 		6ED3F17320A42CAD00428507 /* output-8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "output-8.jpeg"; sourceTree = "<group>"; };
 		6ED3F17420A42CAD00428507 /* output-9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "output-9.jpeg"; sourceTree = "<group>"; };
 		6ED3F17820A42CAD00428507 /* CImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CImg.h; sourceTree = "<group>"; };
-		6ED3F17920A42CAD00428507 /* GLCompilationException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCompilationException.h; sourceTree = "<group>"; };
-		6ED3F17A20A42CAD00428507 /* GLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLException.h; sourceTree = "<group>"; };
-		6ED3F17B20A42CAD00428507 /* GLFWException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLFWException.h; sourceTree = "<group>"; };
-		6ED3F17C20A42CAD00428507 /* GLIOException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLIOException.h; sourceTree = "<group>"; };
-		6ED3F17D20A42CAD00428507 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
-		6ED3F17E20A42CAD00428507 /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
-		6ED3F17F20A42CAD00428507 /* shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vert; sourceTree = "<group>"; };
-		6ED3F18020A42CAD00428507 /* shaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shaderProgram.h; sourceTree = "<group>"; };
-		6ED3F18120A42CAD00428507 /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
-		6ED3F18320A42CAD00428507 /* GLCompilationException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLCompilationException.cpp; sourceTree = "<group>"; };
-		6ED3F18420A42CAD00428507 /* GLException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLException.cpp; sourceTree = "<group>"; };
-		6ED3F18520A42CAD00428507 /* GLFWException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLFWException.cpp; sourceTree = "<group>"; };
-		6ED3F18620A42CAD00428507 /* GLIOException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLIOException.cpp; sourceTree = "<group>"; };
-		6ED3F18720A42CAD00428507 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		6ED3F18820A42CAD00428507 /* shaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shaderProgram.cpp; sourceTree = "<group>"; };
-		6ED3F18920A42CAD00428507 /* window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
+		6ED3F17D20A42CAD00428507 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = main.h; path = include/main.h; sourceTree = "<group>"; };
 		6ED3F19820A42F3100428507 /* libtiff.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtiff.5.dylib; path = ../../../../../../usr/local/Cellar/libtiff/4.0.9_3/lib/libtiff.5.dylib; sourceTree = "<group>"; };
 		6ED3F19A20A42F4D00428507 /* libpng16.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng16.16.dylib; path = ../../../../../../usr/local/Cellar/libpng/1.6.34/lib/libpng16.16.dylib; sourceTree = "<group>"; };
 		6ED3F19C20A42F6500428507 /* libjpeg.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libjpeg.9.dylib; path = ../../../../../../usr/local/Cellar/jpeg/9c/lib/libjpeg.9.dylib; sourceTree = "<group>"; };
+		6EDEFEA120A9E6CF0049DC4C /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
+		6EF87F4520ACA7960036BA45 /* camera_shader_height.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = camera_shader_height.vert; sourceTree = "<group>"; };
+		6EF87F4620ACAB460036BA45 /* shader_height.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader_height.frag; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +109,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E1EB80220AC8E87006BBC92 /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				6E51E00420AE4E4C00EBAD83 /* heightMap.h */,
+				6E1EB80320AC8E87006BBC92 /* object.h */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		6E1EB80420AC8E87006BBC92 /* exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				6E1EB80520AC8E87006BBC92 /* GLCompilationException.h */,
+				6E1EB80620AC8E87006BBC92 /* GLException.h */,
+				6E1EB80720AC8E87006BBC92 /* GLFWException.h */,
+				6E1EB80820AC8E87006BBC92 /* GLIOException.h */,
+			);
+			path = exceptions;
+			sourceTree = "<group>";
+		};
+		6E1EB80A20AC8E87006BBC92 /* functional */ = {
+			isa = PBXGroup;
+			children = (
+				6E1EB80B20AC8E87006BBC92 /* camera.h */,
+				6E1EB80C20AC8E87006BBC92 /* renderer.h */,
+				6E1EB80D20AC8E87006BBC92 /* shaderProgram.h */,
+				6E1EB80E20AC8E87006BBC92 /* window.h */,
+			);
+			path = functional;
+			sourceTree = "<group>";
+		};
+		6E1EB80F20AC8E87006BBC92 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				6E1EB81020AC8E87006BBC92 /* camera_shader.vert */,
+				6E1EB81120AC8E87006BBC92 /* shader.frag */,
+				6EF87F4520ACA7960036BA45 /* camera_shader_height.vert */,
+				6EF87F4620ACAB460036BA45 /* shader_height.frag */,
+			);
+			name = shaders;
+			path = include/shaders;
+			sourceTree = "<group>";
+		};
+		6E1EB81320AC8EA8006BBC92 /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				6E1EB81420AC8EA8006BBC92 /* heightMap.cpp */,
+				6E1EB81520AC8EA8006BBC92 /* object.cpp */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		6E1EB81620AC8EA8006BBC92 /* exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				6E1EB81720AC8EA8006BBC92 /* GLCompilationException.cpp */,
+				6E1EB81820AC8EA8006BBC92 /* GLException.cpp */,
+				6E1EB81920AC8EA8006BBC92 /* GLFWException.cpp */,
+				6E1EB81A20AC8EA8006BBC92 /* GLIOException.cpp */,
+			);
+			path = exceptions;
+			sourceTree = "<group>";
+		};
+		6E1EB81B20AC8EA8006BBC92 /* functional */ = {
+			isa = PBXGroup;
+			children = (
+				6E1EB81C20AC8EA8006BBC92 /* camera.cpp */,
+				6E1EB81D20AC8EA8006BBC92 /* renderer.cpp */,
+				6E1EB81E20AC8EA8006BBC92 /* shaderProgram.cpp */,
+				6E1EB81F20AC8EA8006BBC92 /* window.cpp */,
+			);
+			path = functional;
+			sourceTree = "<group>";
+		};
 		6ED3F14620A42C2B00428507 = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +208,9 @@
 		6ED3F15120A42C2B00428507 /* COMP371-A1 */ = {
 			isa = PBXGroup;
 			children = (
-				6ED3F1A320A43D0400428507 /* shaders */,
+				6EDEFEA120A9E6CF0049DC4C /* main.cpp */,
+				6ED3F17D20A42CAD00428507 /* main.h */,
+				6E1EB80F20AC8E87006BBC92 /* shaders */,
 				6ED3F16720A42CAD00428507 /* img */,
 				6ED3F17520A42CAD00428507 /* include */,
 				6ED3F18220A42CAD00428507 /* src */,
@@ -134,6 +221,10 @@
 		6ED3F16720A42CAD00428507 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6E69ED7C20AD0F6800A78ADC /* 5275-heightmap-test.png */,
+				6E69ED7D20AD0F6800A78ADC /* alpen_heightmap.png */,
+				6E69ED7E20AD0F6800A78ADC /* imageproxy.php.png */,
+				6E69ED7F20AD0F6800A78ADC /* morgantown-height-map-usgs-ned-10m.png */,
 				6ED3F16820A42CAD00428507 /* Heightmap.png */,
 				6ED3F16920A42CAD00428507 /* output-1.jpeg */,
 				6ED3F16A20A42CAD00428507 /* output-10.jpeg */,
@@ -154,13 +245,10 @@
 		6ED3F17520A42CAD00428507 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				6E1EB80220AC8E87006BBC92 /* entities */,
+				6E1EB80420AC8E87006BBC92 /* exceptions */,
+				6E1EB80A20AC8E87006BBC92 /* functional */,
 				6ED3F17820A42CAD00428507 /* CImg.h */,
-				6ED3F1A220A43CF800428507 /* Exceptions */,
-				6ED3F17D20A42CAD00428507 /* main.h */,
-				6ED3F18020A42CAD00428507 /* shaderProgram.h */,
-				6ED3F18120A42CAD00428507 /* window.h */,
-				6E87A99A20A635F700BF9993 /* mesh.h */,
-				6E14727120A7AD5600C8644E /* heightMap.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -168,47 +256,11 @@
 		6ED3F18220A42CAD00428507 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				6ED3F1A120A43CDC00428507 /* Exceptions */,
-				6ED3F18720A42CAD00428507 /* main.cpp */,
-				6ED3F18820A42CAD00428507 /* shaderProgram.cpp */,
-				6E87A99B20A638DD00BF9993 /* mesh.cpp */,
-				6E14727220A7AE6100C8644E /* heightMap.cpp */,
-				6ED3F18920A42CAD00428507 /* window.cpp */,
+				6E1EB81320AC8EA8006BBC92 /* entities */,
+				6E1EB81620AC8EA8006BBC92 /* exceptions */,
+				6E1EB81B20AC8EA8006BBC92 /* functional */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		6ED3F1A120A43CDC00428507 /* Exceptions */ = {
-			isa = PBXGroup;
-			children = (
-				6ED3F18320A42CAD00428507 /* GLCompilationException.cpp */,
-				6ED3F18420A42CAD00428507 /* GLException.cpp */,
-				6ED3F18520A42CAD00428507 /* GLFWException.cpp */,
-				6ED3F18620A42CAD00428507 /* GLIOException.cpp */,
-			);
-			name = Exceptions;
-			sourceTree = "<group>";
-		};
-		6ED3F1A220A43CF800428507 /* Exceptions */ = {
-			isa = PBXGroup;
-			children = (
-				6ED3F17920A42CAD00428507 /* GLCompilationException.h */,
-				6ED3F17A20A42CAD00428507 /* GLException.h */,
-				6ED3F17B20A42CAD00428507 /* GLFWException.h */,
-				6ED3F17C20A42CAD00428507 /* GLIOException.h */,
-			);
-			name = Exceptions;
-			sourceTree = "<group>";
-		};
-		6ED3F1A320A43D0400428507 /* shaders */ = {
-			isa = PBXGroup;
-			children = (
-				6ED3F17E20A42CAD00428507 /* shader.frag */,
-				6ED3F17F20A42CAD00428507 /* shader.vert */,
-				6E71C8E120A4EF8800F8E7C4 /* camera_shader.vert */,
-			);
-			name = shaders;
-			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,15 +319,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ED3F19420A42CAD00428507 /* GLIOException.cpp in Sources */,
-				6ED3F19620A42CAD00428507 /* shaderProgram.cpp in Sources */,
-				6ED3F19220A42CAD00428507 /* GLException.cpp in Sources */,
-				6ED3F19720A42CAD00428507 /* window.cpp in Sources */,
-				6ED3F19320A42CAD00428507 /* GLFWException.cpp in Sources */,
-				6ED3F19520A42CAD00428507 /* main.cpp in Sources */,
-				6E14727320A7AE6100C8644E /* heightMap.cpp in Sources */,
-				6E87A99C20A638DD00BF9993 /* mesh.cpp in Sources */,
-				6ED3F19120A42CAD00428507 /* GLCompilationException.cpp in Sources */,
+				6E1EB82220AC8EA8006BBC92 /* GLCompilationException.cpp in Sources */,
+				6E1EB82820AC8EA8006BBC92 /* shaderProgram.cpp in Sources */,
+				6E1EB82420AC8EA8006BBC92 /* GLFWException.cpp in Sources */,
+				6EDEFEA220A9E6CF0049DC4C /* main.cpp in Sources */,
+				6E1EB82320AC8EA8006BBC92 /* GLException.cpp in Sources */,
+				6E1EB82920AC8EA8006BBC92 /* window.cpp in Sources */,
+				6E1EB82720AC8EA8006BBC92 /* renderer.cpp in Sources */,
+				6E1EB82620AC8EA8006BBC92 /* camera.cpp in Sources */,
+				6E1EB82520AC8EA8006BBC92 /* GLIOException.cpp in Sources */,
+				6E1EB82120AC8EA8006BBC92 /* object.cpp in Sources */,
+				6E1EB82020AC8EA8006BBC92 /* heightMap.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
